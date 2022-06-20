@@ -4,7 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 
+import Ratings from "../Ratings/Ratings";
+
 const MoviePage = ({ movie }) => {
+  console.log(movie);
   let poster = movie.Images[0].thumbnails.large;
 
   return (
@@ -25,11 +28,8 @@ const MoviePage = ({ movie }) => {
             <Text>{movie.Details.Rated}</Text>
             <Text>{movie.Details.Runtime}</Text>
           </Flex>
-          <Flex>
-            <Text>IMDB: {movie.Details.Ratings[0].Value}</Text>
-            <Text>RT: {movie.Details.Ratings[1].Value}</Text>
-            <Text>Meta: {movie.Details.Ratings[2].Value}</Text>
-          </Flex>
+
+          <Ratings ratings={movie.Details.Ratings} />
         </Flex>
       </Flex>
 

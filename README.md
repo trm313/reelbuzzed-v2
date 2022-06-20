@@ -15,6 +15,8 @@ Made With:
 - [Airtable](https://airtable.com/api)
 - [OMDb API](https://www.omdbapi.com/)
 
+Feedback & discussion welcome!
+
 ## Getting Started
 
 First, run the development server:
