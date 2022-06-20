@@ -1,0 +1,56 @@
+/* Markdown Styles */
+/* Global */
+.markdown {
+}
+/* Headers */
+.markdown h1,
+.markdown h2 {
+  margin: 12px 0;
+}
+.markdown h3,
+.markdown h4 {
+}
+.markdown h5,
+.markdown h6 {
+}
+/* Links */
+.markdown a {
+  @apply text-blue-600;
+}
+.markdown a:hover {
+  text-decoration: underline;
+}
+/* Paragraph */
+.markdown p {
+  margin-bottom: 4px;
+}
+/* Lists */
+.markdown ul,
+.markdown ol {
+  margin-left: 8px;
+}
+.markdown li > p,
+.markdown li > ul,
+.markdown li > ol {
+  margin-bottom: 0;
+}
+.markdown ol {
+  list-style: decimal;
+}
+.markdown ul {
+  list-style: disc;
+}
+/* Blockquotes */
+.markdown blockquote {
+}
+.markdown blockquote > p {
+  margin-bottom: 0;
+}
+/* Tables */
+.markdown td,
+.markdown th {
+}
+.markdown tr:nth-child(odd) {
+}
+.markdown table {
+}
