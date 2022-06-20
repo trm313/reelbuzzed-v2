@@ -1,4 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ReelBuzzed - Static Site for Movie Games
+
+[Reelbuzzed.com](Reelbuzzed.com)
+
+Elements:
+
+- Airtable database serving as CMS (content management system)
+- NextJS static site with pages built from Airtable and some content APIs
+
+Made With:
+
+- [Next.js](https://nextjs.org/)
+- [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
+- [ChakraUI](https://chakra-ui.com/)
+- [Airtable](https://airtable.com/api)
+- [OMDb API](https://www.omdbapi.com/)
 
 ## Getting Started
 
