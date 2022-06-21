@@ -6,7 +6,6 @@ import styles from "../styles/Home.module.css";
 // Components
 import { Flex, Text } from "@chakra-ui/react";
 import Layout from "../components/Layout/Layout";
-import Footer from "../components/Layout/Footer";
 import MovieList from "../components/MovieList/MovieList";
 
 // Functions

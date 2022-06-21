@@ -9,7 +9,13 @@ const MovieListItem = ({ movie }) => {
   let poster = movie.Images[0].thumbnails.large;
   return (
     <Link href={`/movies/${movie.Slug}`}>
-      <Flex w={["100%", "450px"]} border='1px' borderColor='gray.100' m={1}>
+      <Flex
+        w={["100%", "450px"]}
+        border='1px'
+        borderColor='gray.100'
+        m={1}
+        cursor='pointer'
+      >
         <Box flexShrink={0}>
           <Image
             src={poster.url}
