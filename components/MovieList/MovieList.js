@@ -34,7 +34,7 @@ const MovieList = ({ movies }) => {
   }, [searchTerm]);
 
   return (
-    <Flex direction={"column"}>
+    <Flex direction={"column"} justifyContent='start'>
       <InputGroup w={["100%", "md", "xl"]} mx='auto' mb={4}>
         <InputLeftElement>
           <Icon as={IoSearchOutline} />

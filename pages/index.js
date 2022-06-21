@@ -28,26 +28,19 @@ export default function Home({ movies }) {
   // console.log(movies[0]);
   return (
     <Layout>
-      <div className={styles.container}>
-        <Head>
-          <title>ReelBuzzed - Movie Drinking Games</title>
-          <meta
-            name='description'
-            content='ReelBuzzed | Movie Drinking Games'
-          />
-          <link rel='icon' href='/favicon.ico' />
-        </Head>
+      <Head>
+        <title>ReelBuzzed - Movie Drinking Games</title>
+        <meta name='description' content='ReelBuzzed | Movie Drinking Games' />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
 
-        <main className={styles.main}>
-          {!movies ? (
-            <Flex>
-              <Text>Loading Movies...</Text>
-            </Flex>
-          ) : (
-            <MovieList movies={movies} />
-          )}
-        </main>
-      </div>
+      {!movies ? (
+        <Flex>
+          <Text>Loading Movies...</Text>
+        </Flex>
+      ) : (
+        <MovieList movies={movies} />
+      )}
     </Layout>
   );
 }

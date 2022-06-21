@@ -7,7 +7,7 @@ const Header = () => {
   const router = useRouter();
 
   return (
-    <Flex px={[0, 8]} direction='column'>
+    <Flex px={[0, 8]} direction='column' mb={4}>
       <Flex
         alignItems='center'
         w='100%'
