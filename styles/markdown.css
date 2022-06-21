@@ -1,6 +1,7 @@
 /* Markdown Styles */
 /* Global */
 .markdown {
+  font-size: 18px;
 }
 /* Headers */
 .markdown h1,
@@ -15,19 +16,19 @@
 }
 /* Links */
 .markdown a {
-  @apply text-blue-600;
 }
 .markdown a:hover {
   text-decoration: underline;
 }
 /* Paragraph */
 .markdown p {
-  margin-bottom: 4px;
+  margin: 2px 0;
 }
 /* Lists */
 .markdown ul,
 .markdown ol {
-  margin-left: 8px;
+  margin-left: 25px;
+  margin-bottom: 10px;
 }
 .markdown li > p,
 .markdown li > ul,

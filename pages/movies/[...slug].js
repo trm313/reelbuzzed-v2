@@ -3,6 +3,7 @@ import { Flex, Text } from "@chakra-ui/react";
 
 import { getMoviePaths, getMovieRecord } from "../../lib/movies";
 
+import Layout from "../../components/Layout/Layout";
 import MoviePage from "../../components/MoviePage/MoviePage";
 
 export async function getStaticPaths() {
@@ -25,11 +26,11 @@ export async function getStaticProps({ params }) {
 export default function Movie({ movie }) {
   // console.log(movie);
   return (
-    <div>
+    <Layout>
       <Head>
         <title>{`${movie.Movie} (${movie.Year}) Drinking Game`}</title>
       </Head>
       <MoviePage movie={movie} />
-    </div>
+    </Layout>
   );
 }

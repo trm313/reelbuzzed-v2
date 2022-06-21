@@ -5,7 +5,7 @@ import Rating from "./Rating";
 
 const Ratings = ({ ratings }) => {
   return (
-    <Flex alignItems='center' justifyContent='center'>
+    <Flex alignItems='center'>
       {ratings.map((rating) => (
         <Rating key={`rating-${rating.Source}`} rating={rating} />
       ))}
