@@ -5,7 +5,7 @@ import { IoBeer } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <Flex direction='column'>
+    <Flex direction='column' mt={8}>
       <Divider />
       <Flex direction='column' alignItems='center' mt={4}>
         <Text fontSize='sm' mt={2}>
