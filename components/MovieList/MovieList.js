@@ -1,17 +1,9 @@
 import React, { useState, useEffect } from "react";
-import {
-  Flex,
-  Text,
-  Input,
-  InputGroup,
-  InputLeftElement,
-  InputRightElement,
-  Icon,
-  IconButton,
-} from "@chakra-ui/react";
+import { Flex, Heading, Text, Icon } from "@chakra-ui/react";
+import { FaTired } from "react-icons/fa";
 import * as gtag from "../../lib/gtag";
-import { IoClose, IoSearchOutline } from "react-icons/io5";
 
+import SearchBar from "../SearchBar";
 import MovieListItem from "./MovieListItem";
 
 const MovieList = ({ movies }) => {
@@ -40,25 +32,7 @@ const MovieList = ({ movies }) => {
 
   return (
     <Flex direction={"column"} justifyContent='start'>
-      <InputGroup w={["100%", "md", "xl"]} mx='auto' mb={4}>
-        <InputLeftElement>
-          <Icon as={IoSearchOutline} />
-        </InputLeftElement>
-        <Input
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder='Search movie titles'
-        />
-        {searchTerm !== "" && (
-          <InputRightElement>
-            <IconButton
-              icon={<Icon as={IoClose} />}
-              size='xs'
-              onClick={() => setSearchTerm("")}
-            />
-          </InputRightElement>
-        )}
-      </InputGroup>
+      <SearchBar value={searchTerm} onChangeValue={setSearchTerm} />
       <Flex
         direction={["column", "row"]}
         flexWrap={["nowrap", "wrap"]}
@@ -67,6 +41,17 @@ const MovieList = ({ movies }) => {
         {visibleMovies.map((movie) => (
           <MovieListItem key={`movie-${movie.id}`} movie={movie} />
         ))}
+
+        {visibleMovies.length === 0 && (
+          <Flex direction='column' alignItems='center'>
+            <Icon as={FaTired} h={12} w={12} color='gray.300' my={6} />
+            <Heading
+              size='sm'
+              mb={2}
+            >{`Sorry, we don't have that one yet!`}</Heading>
+            <Text>{`We log failed searches so we'll try to add it soon`}</Text>
+          </Flex>
+        )}
       </Flex>
     </Flex>
   );

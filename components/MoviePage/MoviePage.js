@@ -8,7 +8,6 @@ import Ratings from "../Ratings/Ratings";
 import SectionWrapper from "./SectionWrapper";
 
 const MoviePage = ({ movie }) => {
-  console.log(movie);
   let poster = movie.Images[0].thumbnails.large;
 
   return (
