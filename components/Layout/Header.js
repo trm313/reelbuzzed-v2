@@ -19,8 +19,10 @@ const Header = () => {
         {router.asPath === "/" ? <Spacer /> : <HomeButton />}
         <Link href='/'>
           <Flex direction='column' flexGrow={1} alignItems='center'>
-            <Heading>ReelBuzzed</Heading>
-            <Text>No Frills Movie Drinking Games</Text>
+            <Heading>Reel Buzzed</Heading>
+            <Heading size='sm' color='gray.700'>
+              Movie Drinking Games
+            </Heading>
           </Flex>
         </Link>
         <Spacer />

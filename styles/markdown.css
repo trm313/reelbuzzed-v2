@@ -1,15 +1,22 @@
 /* Markdown Styles */
 /* Global */
 .markdown {
-  font-size: 18px;
+  font-size: 16px;
 }
 /* Headers */
 .markdown h1,
 .markdown h2 {
   margin: 12px 0;
 }
+
+.markdown h2 {
+  font-size: 24px;
+}
+
 .markdown h3,
 .markdown h4 {
+  margin: 12px 0;
+  font-size: 20px;
 }
 .markdown h5,
 .markdown h6 {
@@ -22,7 +29,7 @@
 }
 /* Paragraph */
 .markdown p {
-  margin: 2px 0;
+  margin: 6px 0;
 }
 /* Lists */
 .markdown ul,
