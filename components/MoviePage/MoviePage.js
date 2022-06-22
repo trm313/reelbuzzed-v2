@@ -42,15 +42,15 @@ const MoviePage = ({ movie }) => {
         <SectionWrapper header='Summary'>
           <Text>{movie.Details.Plot}</Text>
           <Flex my={2}>
-            <Text py={1} px={3} bg='purple.100' rounded='md'>
+            <Text py={1} px={3} bg='gray.100' rounded='md'>
               {movie.Details.Rated}
             </Text>
-            <Text py={1} px={2} bg='purple.100' ml={2} rounded>
+            <Text py={1} px={2} bg='gray.100' ml={2} rounded='md'>
               {movie.Details.Runtime}
             </Text>
           </Flex>
           <Text>Starring {movie.Details.Actors}</Text>
-          <Text>It received {movie.Details.Awards}</Text>
+          <Text>{movie.Details.Awards}</Text>
         </SectionWrapper>
 
         <SectionWrapper header='Rules'>

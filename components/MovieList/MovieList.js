@@ -9,6 +9,7 @@ import {
   Icon,
   IconButton,
 } from "@chakra-ui/react";
+import * as gtag from "../../lib/gtag";
 import { IoClose, IoSearchOutline } from "react-icons/io5";
 
 import MovieListItem from "./MovieListItem";
@@ -18,7 +19,11 @@ const MovieList = ({ movies }) => {
   const [visibleMovies, setVisibleMovies] = useState(movies);
 
   const logFailedSearch = (term) => {
-    // ...
+    gtag.event({
+      action: "search",
+      category: "No Search Results",
+      label: term,
+    });
   };
 
   useEffect(() => {
@@ -31,7 +36,7 @@ const MovieList = ({ movies }) => {
     }
 
     setVisibleMovies(filteredMovies);
-  }, [searchTerm]);
+  }, [searchTerm, movies]);
 
   return (
     <Flex direction={"column"} justifyContent='start'>
