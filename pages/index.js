@@ -14,7 +14,7 @@ import { updateDatabase } from "../lib/build";
 
 // Static Prop Generation
 export async function getStaticProps() {
-  updateDatabase(); // Update Airtable records on build
+  await updateDatabase(); // Update Airtable records on build
 
   const movieList = await fetchMovieList();
   return {

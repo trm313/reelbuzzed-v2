@@ -19,11 +19,9 @@ const Footer = () => {
         </Text>
 
         <Link href='/user-agreements'>
-          <Flex>
-            <Text fontSize='sm' mt={2} color={"purple"}>
-              Terms of Service & Privacy Policy
-            </Text>
-          </Flex>
+          <Text fontSize='sm' mt={2} color={"purple"} cursor='pointer'>
+            Terms of Service & Privacy Policy
+          </Text>
         </Link>
       </Flex>
     </Flex>
