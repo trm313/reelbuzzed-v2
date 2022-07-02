@@ -16,6 +16,7 @@ import { updateDatabase } from "../lib/build";
 export async function getStaticProps() {
   await updateDatabase(); // Update Airtable records on build
 
+  console.log("getStaticProps>fetchMovieList");
   const movieList = await fetchMovieList();
   return {
     props: {

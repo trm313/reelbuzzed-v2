@@ -29,11 +29,14 @@ const SearchBar = ({ value, onChangeValue }) => {
         value={value}
         onChange={(e) => change(e.target.value)}
         placeholder='Search movie titles'
+        rounded='2xl'
+        border='2px'
+        borderColor={"gray.100"}
       />
       {value !== "" && (
         <InputRightElement>
           <IconButton
-            icon={<Icon as={IoClose} />}
+            icon={<Icon as={IoClose} color='gray.200' />}
             size='xs'
             onClick={() => clear()}
           />

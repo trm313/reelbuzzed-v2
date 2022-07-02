@@ -5,6 +5,7 @@ import * as gtag from "../../lib/gtag";
 
 import SearchBar from "../SearchBar";
 import MovieListItem from "./MovieListItem";
+import Disclaimer from "../Disclaimer";
 
 const MovieList = ({ movies }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -32,6 +33,7 @@ const MovieList = ({ movies }) => {
 
   return (
     <Flex direction={"column"} justifyContent='start'>
+      {/* <Disclaimer /> */}
       <SearchBar value={searchTerm} onChangeValue={setSearchTerm} />
       <Flex
         direction={["column", "row"]}

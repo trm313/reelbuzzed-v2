@@ -4,6 +4,8 @@ import Image from "next/image";
 import imgRtFresh from "../../public/logos/RottenTomatoes_Fresh.png";
 import imgRtSplat from "../../public/logos/RottenTomatoes_Splat.png";
 
+import { styles } from "./Rating";
+
 /**
  * Rules:
  * - Image displayed left of value
@@ -33,7 +35,9 @@ const RottenTomatoes = ({ rating }) => {
   return (
     <>
       <Image src={image} alt={alt} height={20} width={20} />
-      <Text ml={1}>{value}%</Text>
+      <Text ml={1} fontSize={styles.value.fontSize} color={styles.value.color}>
+        {value}%
+      </Text>
     </>
   );
 };

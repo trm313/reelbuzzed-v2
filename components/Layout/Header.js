@@ -20,7 +20,7 @@ const Header = () => {
         <Link href='/'>
           <Flex direction='column' flexGrow={1} alignItems='center'>
             <Heading>Reel Buzzed</Heading>
-            <Heading size='sm' color='gray.700'>
+            <Heading size='sm' color='gray.500' fontWeight='regular'>
               Movie Drinking Games
             </Heading>
           </Flex>
