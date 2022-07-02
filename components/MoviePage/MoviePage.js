@@ -7,6 +7,7 @@ import ReactMarkdown from "react-markdown";
 import Ratings from "../Ratings/Ratings";
 import SectionWrapper from "./SectionWrapper";
 import Disclaimer from "../Disclaimer";
+import ShareBtns from "./ShareBtns";
 
 const MoviePage = ({ movie }) => {
   let poster = movie.Images[0].thumbnails.large;
@@ -68,6 +69,12 @@ const MoviePage = ({ movie }) => {
               </Box>
             ))}
         </SectionWrapper>
+      </Flex>
+      <Flex mt={16} justifySelf='flex-end'>
+        <ShareBtns
+          shareText={`${movie.Movie} Drinking Game`}
+          shareUrl={`https://reelbuzzed.com/movies/${movie.Slug}`}
+        />
       </Flex>
     </Flex>
   );
