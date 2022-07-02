@@ -5,6 +5,13 @@ import RottenTomatoes from "./RottenTomatoes";
 import IMDB from "./IMDB";
 import Metacritic from "./Metacritic";
 
+export const styles = {
+  value: {
+    color: "gray.600",
+    fontSize: "sm",
+  },
+};
+
 const Rating = ({ rating }) => {
   let child;
   if (rating.Source === "Rotten Tomatoes") {

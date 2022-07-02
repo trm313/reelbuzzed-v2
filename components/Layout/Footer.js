@@ -14,15 +14,14 @@ const Footer = () => {
         <Text fontSize='sm' mt={2}>
           Drink Responsibly!
         </Text>
-        <Text fontSize='sm' mt={2}>
-          Reel Buzzed © {new Date().getFullYear()}
-        </Text>
-
         <Link href='/user-agreements'>
           <Text fontSize='sm' mt={2} color={"purple"} cursor='pointer'>
             Terms of Service & Privacy Policy
           </Text>
         </Link>
+        <Text fontSize='sm' mt={2}>
+          Reel Buzzed © {new Date().getFullYear()}
+        </Text>
       </Flex>
     </Flex>
   );

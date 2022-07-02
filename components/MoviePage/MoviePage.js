@@ -6,6 +6,7 @@ import ReactMarkdown from "react-markdown";
 
 import Ratings from "../Ratings/Ratings";
 import SectionWrapper from "./SectionWrapper";
+import Disclaimer from "../Disclaimer";
 
 const MoviePage = ({ movie }) => {
   let poster = movie.Images[0].thumbnails.large;
@@ -41,17 +42,17 @@ const MoviePage = ({ movie }) => {
         <SectionWrapper header='Summary'>
           <Text>{movie.Details.Plot}</Text>
           <Flex my={2}>
-            <Text py={1} px={3} bg='gray.100' rounded='md'>
+            <Text py={1} px={3} bg='gray.100' rounded='md' fontSize='sm'>
               {movie.Details.Rated}
             </Text>
-            <Text py={1} px={2} bg='gray.100' ml={2} rounded='md'>
+            <Text py={1} px={2} bg='gray.100' ml={2} rounded='md' fontSize='sm'>
               {movie.Details.Runtime}
             </Text>
           </Flex>
           <Text>Starring {movie.Details.Actors}</Text>
           <Text>{movie.Details.Awards}</Text>
         </SectionWrapper>
-
+        {/* <Disclaimer /> */}
         <SectionWrapper header='Rules'>
           <Text fontSize='lg'>Drink whenever...</Text>
           <ReactMarkdown className='markdown'>{movie.Rules}</ReactMarkdown>
