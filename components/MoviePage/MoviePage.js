@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Text, Box, Badge } from "@chakra-ui/react";
+import { Flex, Text, Box, Badge, Divider } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
@@ -39,7 +39,7 @@ const MoviePage = ({ movie }) => {
           <Ratings ratings={movie.Details.Ratings} />
         </Flex>
       </Flex>
-
+      <Divider mt={2} bg='yellow.400' />
       <Flex label='Content Body' direction='column'>
         <SectionWrapper header='Summary'>
           <Text>{movie.Details.Plot}</Text>
