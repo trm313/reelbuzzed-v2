@@ -11,7 +11,7 @@ const Header = () => {
       <Flex
         alignItems='center'
         w='100%'
-        maxW='4xl'
+        maxW='lg'
         mx='auto'
         p={4}
         justifyContent='space-between'
