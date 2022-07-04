@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Text, Box } from "@chakra-ui/react";
+import { Flex, Text, Box, Badge } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
@@ -16,25 +16,26 @@ const MoviePage = ({ movie }) => {
     <Flex
       direction='column'
       alignItems='center'
+      w='full'
       p={4}
       mb={8}
-      maxW='4xl'
       mx='auto'
     >
       <Flex label='Row Header' w='100%'>
-        <Box flexShrink={0} mr={3}>
+        <Box flexShrink={0} mr={3} maxW={[100, 100]}>
           <Image
             src={poster.url}
             alt={`Movie Poster: ${movie.Movie}`}
             // layout='fill'
-            width={poster.width / 4}
-            height={poster.height / 4}
+            width={poster.width}
+            height={poster.height}
           />
         </Box>
 
         <Flex direction='column' flexGrow={1}>
           <Text fontSize='3xl'>{movie.Movie}</Text>
           <Text fontSize='sm'>{movie.Details.Genre}</Text>
+          <Text fontSize='sm'>{movie.Details.Actors}</Text>
           <Ratings ratings={movie.Details.Ratings} />
         </Flex>
       </Flex>
@@ -43,12 +44,25 @@ const MoviePage = ({ movie }) => {
         <SectionWrapper header='Summary'>
           <Text>{movie.Details.Plot}</Text>
           <Flex my={2}>
-            <Text py={1} px={3} bg='gray.100' rounded='md' fontSize='sm'>
+            <Badge
+              py={1}
+              px={3}
+              colorScheme='purple'
+              rounded='md'
+              fontSize='sm'
+            >
               {movie.Details.Rated}
-            </Text>
-            <Text py={1} px={2} bg='gray.100' ml={2} rounded='md' fontSize='sm'>
+            </Badge>
+            <Badge
+              py={1}
+              px={2}
+              colorScheme='purple'
+              ml={2}
+              rounded='md'
+              fontSize='sm'
+            >
               {movie.Details.Runtime}
-            </Text>
+            </Badge>
           </Flex>
           <Text>Starring {movie.Details.Actors}</Text>
           <Text>{movie.Details.Awards}</Text>

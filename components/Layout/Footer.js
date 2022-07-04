@@ -15,7 +15,7 @@ const Footer = () => {
           Drink Responsibly!
         </Text>
         <Link href='/user-agreements'>
-          <Text fontSize='sm' mt={2} color={"purple"} cursor='pointer'>
+          <Text fontSize='sm' mt={2} color={"yellow.600"} cursor='pointer'>
             Terms of Service & Privacy Policy
           </Text>
         </Link>

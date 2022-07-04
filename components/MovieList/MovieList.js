@@ -46,10 +46,11 @@ const MovieList = ({ movies }) => {
 
         {visibleMovies.length === 0 && (
           <Flex direction='column' alignItems='center'>
-            <Icon as={FaTired} h={12} w={12} color='gray.300' my={6} />
+            <Icon as={FaTired} h={12} w={12} color='dark.400' my={6} />
             <Heading
               size='sm'
               mb={2}
+              color='yellow.600'
             >{`Sorry, we don't have that one yet!`}</Heading>
             <Text>{`We log failed searches so we'll try to add it soon`}</Text>
           </Flex>

@@ -13,7 +13,8 @@ import QRCode from "react-qr-code";
 const styles = {
   btn: {
     size: "sm",
-    w: 120,
+    w: 100,
+    colorScheme: "purple",
   },
 };
 
@@ -50,6 +51,7 @@ const ShareBtns = ({
             mr={2}
             w={styles.btn.w}
             size={styles.btn.size}
+            colorScheme={styles.btn.colorScheme}
           >
             Share
           </Button>
@@ -63,6 +65,7 @@ const ShareBtns = ({
             w={styles.btn.w}
             size={styles.btn.size}
             mr={2}
+            colorScheme={styles.btn.colorScheme}
           >
             {isCopied ? "Copied!" : "Copy"}
           </Button>
@@ -73,6 +76,7 @@ const ShareBtns = ({
           w={styles.btn.w}
           size={styles.btn.size}
           onClick={() => toggleQR()}
+          colorScheme={styles.btn.colorScheme}
         >
           {isQRShowing ? "Hide QR" : "QR Code"}
         </Button>
