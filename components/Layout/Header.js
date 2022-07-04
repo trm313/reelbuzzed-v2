@@ -18,7 +18,12 @@ const Header = () => {
       >
         {router.asPath === "/" ? <Spacer /> : <HomeButton />}
         <Link href='/'>
-          <Flex direction='column' flexGrow={1} alignItems='center'>
+          <Flex
+            direction='column'
+            flexGrow={1}
+            alignItems='center'
+            cursor='pointer'
+          >
             <Heading color='light.600' fontWeight='regular'>
               Reel Buzzed
             </Heading>

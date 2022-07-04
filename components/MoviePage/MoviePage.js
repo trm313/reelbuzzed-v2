@@ -35,12 +35,16 @@ const MoviePage = ({ movie }) => {
 
           <Flex direction='column' flexGrow={1}>
             <Text fontSize='3xl'>{movie.Movie}</Text>
-            <Text fontSize='sm'>{movie.Details.Genre}</Text>
-            <Text fontSize='sm'>{movie.Details.Actors}</Text>
+            <Text fontSize='sm' color='gray.400'>
+              {movie.Details.Genre}
+            </Text>
+            <Text fontSize='sm' mb={2} color='gray.400'>
+              {movie.Details.Actors}
+            </Text>
             <Ratings ratings={movie.Details.Ratings} />
           </Flex>
         </Flex>
-        <Divider mt={2} bg='yellow.400' />
+        <Divider mt={4} bg='yellow.400' />
         <Flex label='Content Body' direction='column'>
           <SectionWrapper header='Summary'>
             <Text>{movie.Details.Plot}</Text>
