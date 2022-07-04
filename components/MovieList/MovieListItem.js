@@ -11,15 +11,13 @@ const MovieListItem = ({ movie }) => {
     <Link href={`/movies/${movie.Slug}`}>
       <Flex
         w={["100%", "450px"]}
-        border='1px'
-        borderColor='yellow.200'
         m={1}
         p={2}
         cursor='pointer'
-        rounded='3xl'
+        rounded='xl'
         bg='dark.600'
       >
-        <Box flexShrink={0} rounded='2xl' overflow='hidden' h={148}>
+        <Box flexShrink={0} rounded='lg' overflow='hidden' h={148}>
           <Image
             src={poster.url}
             alt={`Movie Poster: ${movie.Movie}`}
