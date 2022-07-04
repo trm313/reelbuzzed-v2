@@ -1,11 +1,12 @@
 import Script from "next/script";
 import Router from "next/router";
+import { useEffect } from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import "../styles/globals.css";
 import "../styles/markdown.css";
 
 import { GA_TRACKING_ID, pageview } from "../lib/gtag";
-import { useEffect } from "react";
+import theme from "../styles/theme";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -19,7 +20,7 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
         strategy='afterInteractive'

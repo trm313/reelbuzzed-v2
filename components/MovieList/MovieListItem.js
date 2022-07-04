@@ -11,14 +11,13 @@ const MovieListItem = ({ movie }) => {
     <Link href={`/movies/${movie.Slug}`}>
       <Flex
         w={["100%", "450px"]}
-        border='2px'
-        borderColor='gray.100'
         m={1}
         p={2}
         cursor='pointer'
-        rounded='3xl'
+        rounded='xl'
+        bg='dark.600'
       >
-        <Box flexShrink={0} rounded='2xl' overflow='hidden' h={148}>
+        <Box flexShrink={0} rounded='lg' overflow='hidden' h={148}>
           <Image
             src={poster.url}
             alt={`Movie Poster: ${movie.Movie}`}
@@ -30,10 +29,10 @@ const MovieListItem = ({ movie }) => {
           <Text fontSize='lg' fontWeight='semibold' mb={2}>
             {movie.Movie} ({movie.Year})
           </Text>
-          <Text fontSize='xs' color='gray.500'>
+          <Text fontSize='xs' color='gray.400'>
             {movie.Details.Genre}
           </Text>
-          <Text fontSize='xs' mb={2} color='gray.500'>
+          <Text fontSize='xs' mb={2} color='gray.400'>
             {movie.Details.Actors}
           </Text>
           <Ratings ratings={movie.Details.Ratings} />

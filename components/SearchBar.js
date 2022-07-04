@@ -23,22 +23,26 @@ const SearchBar = ({ value, onChangeValue }) => {
   return (
     <InputGroup w={["100%", "md", "xl"]} mx='auto' mb={4}>
       <InputLeftElement>
-        <Icon as={IoSearchOutline} />
+        <Icon as={IoSearchOutline} color='dark.800' />
       </InputLeftElement>
       <Input
         value={value}
         onChange={(e) => change(e.target.value)}
         placeholder='Search movie titles'
-        rounded='2xl'
-        border='2px'
-        borderColor={"gray.100"}
+        rounded='xl'
+        border='1px'
+        borderColor={"yellow.200"}
+        bg='yellow.400'
+        color='dark.800'
+        _placeholder={{ opacity: 0.6, color: "dark.800" }}
       />
       {value !== "" && (
         <InputRightElement>
           <IconButton
-            icon={<Icon as={IoClose} color='gray.200' />}
+            icon={<Icon as={IoClose} />}
             size='xs'
             onClick={() => clear()}
+            bg='dark.400'
           />
         </InputRightElement>
       )}

@@ -7,7 +7,7 @@ import Metacritic from "./Metacritic";
 
 export const styles = {
   value: {
-    color: "gray.600",
+    color: "light.600",
     fontSize: "sm",
   },
 };

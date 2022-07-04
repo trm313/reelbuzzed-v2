@@ -11,16 +11,29 @@ const Header = () => {
       <Flex
         alignItems='center'
         w='100%'
-        maxW='4xl'
+        maxW='lg'
         mx='auto'
         p={4}
         justifyContent='space-between'
       >
         {router.asPath === "/" ? <Spacer /> : <HomeButton />}
         <Link href='/'>
-          <Flex direction='column' flexGrow={1} alignItems='center'>
-            <Heading>Reel Buzzed</Heading>
-            <Heading size='sm' color='gray.500' fontWeight='regular'>
+          <Flex
+            direction='column'
+            flexGrow={1}
+            alignItems='center'
+            cursor='pointer'
+          >
+            <Heading color='light.600' fontWeight='regular'>
+              Reel Buzzed
+            </Heading>
+            <Heading
+              size='sm'
+              color='yellow.600'
+              fontWeight='regular'
+              fontFamily='body'
+              textTransform={"uppercase"}
+            >
               Movie Drinking Games
             </Heading>
           </Flex>

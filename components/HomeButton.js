@@ -8,7 +8,8 @@ const HomeButton = () => (
       icon={<Icon as={IoArrowBack} />}
       size={"md"}
       aria-label='Return to Home'
-      colorScheme='gray'
+      bg='dark.400'
+      color='light.600'
     />
   </Link>
 );
