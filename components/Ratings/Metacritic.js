@@ -15,8 +15,14 @@ const Metacritic = ({ rating }) => {
 
   return (
     <>
-      <Badge colorScheme={color} height='20px'>
-        Meta
+      <Badge
+        colorScheme={color}
+        // h={"20px"}
+        // w={"20px"}
+        variant='solid'
+        size='lg'
+      >
+        M
       </Badge>
       <Text ml={1} fontSize={styles.value.fontSize} color={styles.value.color}>
         {value}
