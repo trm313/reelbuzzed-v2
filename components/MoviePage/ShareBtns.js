@@ -6,6 +6,7 @@ import {
   IoLinkOutline,
 } from "react-icons/io5";
 import QRCode from "react-qr-code";
+import * as gtag from "../../lib/gtag";
 
 // Navigator.share()
 // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share
@@ -32,12 +33,30 @@ const ShareBtns = ({
     url: shareUrl,
   };
 
+  const share = () => {
+    gtag.event({
+      action: "share",
+      category: "Native",
+    });
+    navigator.share(shareMeta);
+  };
+
   const copyUrl = () => {
     navigator.clipboard.writeText(shareUrl);
     setIsCopied(true);
+    gtag.event({
+      action: "share",
+      category: "Copy",
+    });
   };
 
   const toggleQR = () => {
+    if (!isQRShowing) {
+      gtag.event({
+        action: "share",
+        category: "QR",
+      });
+    }
     setIsQRShowing(!isQRShowing);
   };
 
@@ -47,7 +66,7 @@ const ShareBtns = ({
         {hasWindow && navigator.canShare && (
           <Button
             leftIcon={<Icon as={IoShareSocialOutline} />}
-            onClick={() => navigator.share(shareMeta)}
+            onClick={() => share()}
             mr={2}
             w={styles.btn.w}
             size={styles.btn.size}
