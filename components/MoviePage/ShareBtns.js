@@ -35,8 +35,8 @@ const ShareBtns = ({
 
   const share = () => {
     gtag.event({
-      action: "share",
-      category: "Native",
+      action: "Native Share",
+      category: "Share",
     });
     navigator.share(shareMeta);
   };
@@ -45,16 +45,16 @@ const ShareBtns = ({
     navigator.clipboard.writeText(shareUrl);
     setIsCopied(true);
     gtag.event({
-      action: "share",
-      category: "Copy",
+      action: "Copy Link",
+      category: "Share",
     });
   };
 
   const toggleQR = () => {
     if (!isQRShowing) {
       gtag.event({
-        action: "share",
-        category: "QR",
+        action: "Open QR",
+        category: "Share",
       });
     }
     setIsQRShowing(!isQRShowing);
