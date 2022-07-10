@@ -21,20 +21,28 @@ const SearchBar = ({ value, onChangeValue }) => {
   };
 
   return (
-    <InputGroup w={["100%", "md", "xl"]} mx='auto' mb={4}>
-      <InputLeftElement>
-        <Icon as={IoSearchOutline} color='dark.800' />
+    <InputGroup
+      w={["100%", "md", "xl"]}
+      mx='auto'
+      mb={4}
+      display='flex'
+      alignItems='center'
+      size='lg'
+    >
+      <InputLeftElement fontSize='1.4em'>
+        <Icon as={IoSearchOutline} color='yellow.200' />
       </InputLeftElement>
       <Input
         value={value}
         onChange={(e) => change(e.target.value)}
         placeholder='Search movie titles'
+        variant='filled'
         rounded='xl'
-        border='1px'
+        // border='1px'
         borderColor={"yellow.200"}
-        bg='yellow.400'
-        color='dark.800'
-        _placeholder={{ opacity: 0.6, color: "dark.800" }}
+        bg='dark.600'
+        color='light.600'
+        _placeholder={{ opacity: 0.6, color: "light.600" }}
       />
       {value !== "" && (
         <InputRightElement>
