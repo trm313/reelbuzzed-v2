@@ -1,11 +1,10 @@
 import Head from "next/head";
 import { Flex, Text } from "@chakra-ui/react";
 
-// import { getMoviePaths, getMovieRecord } from "../../lib/movies";
 import { getListPaths, getListRecord } from "../../lib/listicles";
 
 import Layout from "../../components/Layout/Layout";
-// import MoviePage from "../../components/MoviePage/MoviePage";
+import ListiclePage from "../../components/ListiclePage/ListiclePage";
 
 export async function getStaticPaths() {
   const paths = await getListPaths();
@@ -17,7 +16,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  // const movie = await getMovieRecord(params.slug[2]);
   const list = await getListRecord(params.slug[0].toLowerCase());
   return {
     props: {
@@ -26,17 +24,14 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function Movie({ list }) {
-  console.log(list);
+export default function List({ list }) {
+  // console.log(list);
   return (
     <Layout>
       <Head>
-        <title>{`Top _#_ _NAME_ Drinking Games`}</title>
+        <title>{`${list.Name} Drinking Games`}</title>
       </Head>
-      {/* <MoviePage movie={movie} /> */}
-      <Flex direction='column'>
-        <Text>Listicle Page</Text>
-      </Flex>
+      <ListiclePage list={list} />
     </Layout>
   );
 }
