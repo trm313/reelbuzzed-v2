@@ -10,22 +10,25 @@ import MovieList from "../components/MovieList/MovieList";
 
 // Functions
 import { fetchMovieList } from "../lib/movies";
+import { getListLinks } from "../lib/listicles";
 import { updateDatabase } from "../lib/build";
 
 // Static Prop Generation
 export async function getStaticProps() {
   await updateDatabase(); // Update Airtable records on build
 
-  console.log("getStaticProps>fetchMovieList");
-  const movieList = await fetchMovieList();
+  const movies = await fetchMovieList();
+  const lists = await getListLinks();
+
   return {
     props: {
-      movies: movieList,
+      movies,
+      lists,
     },
   };
 }
 
-export default function Home({ movies }) {
+export default function Home({ movies, lists }) {
   // console.log(movies[0]);
   return (
     <Layout>
@@ -40,7 +43,7 @@ export default function Home({ movies }) {
           <Text>Loading Movies...</Text>
         </Flex>
       ) : (
-        <MovieList movies={movies} />
+        <MovieList movies={movies} lists={lists} />
       )}
     </Layout>
   );

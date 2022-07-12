@@ -7,9 +7,10 @@ import ReactMarkdown from "react-markdown";
 import Ratings from "../Ratings/Ratings";
 import SectionWrapper from "./SectionWrapper";
 import Disclaimer from "../Disclaimer";
-import ShareBtns from "./ShareBtns";
+import ShareBtns from "../ShareBtns";
+import ListNavs from "../ListNavs/ListNavs";
 
-const MoviePage = ({ movie }) => {
+const MoviePage = ({ movie, lists }) => {
   let poster = movie.Images[0].thumbnails.large;
 
   return (
@@ -95,6 +96,10 @@ const MoviePage = ({ movie }) => {
             shareUrl={`https://reelbuzzed.com/movies/${movie.Slug}`}
           />
         </Flex>
+      </Flex>
+
+      <Flex direction='column' mt={8}>
+        <ListNavs lists={lists} />
       </Flex>
     </Flex>
   );

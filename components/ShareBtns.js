@@ -6,7 +6,7 @@ import {
   IoLinkOutline,
 } from "react-icons/io5";
 import QRCode from "react-qr-code";
-import * as gtag from "../../lib/gtag";
+import * as gtag from "../lib/gtag";
 
 // Navigator.share()
 // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share
