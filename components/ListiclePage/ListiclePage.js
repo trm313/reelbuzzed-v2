@@ -4,11 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 
-// import Ratings from "../Ratings/Ratings";
-// import SectionWrapper from "./SectionWrapper";
-// import Disclaimer from "../Disclaimer";
-// import ShareBtns from "./ShareBtns";
-import MoviePage from "../MoviePage/MoviePage";
+import Movie from "./Movie";
 
 const ListiclePage = ({ list }) => {
   console.log(list);
@@ -26,7 +22,7 @@ const ListiclePage = ({ list }) => {
 
       <Flex direction='column'>
         {list.PopulatedMovies.map((m) => (
-          <MoviePage key={`listicle-movie_${m.id}`} movie={m} />
+          <Movie key={`listicle-movie_${m.id}`} movie={m} />
         ))}
       </Flex>
     </Flex>
