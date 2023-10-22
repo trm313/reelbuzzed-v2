@@ -12,7 +12,7 @@ import ListNavs from "../ListNavs/ListNavs";
 
 const MoviePage = ({ movie, lists }) => {
   let poster = movie.Images[0].thumbnails.large;
-
+  console.log(poster);
   return (
     <Flex
       direction='column'
