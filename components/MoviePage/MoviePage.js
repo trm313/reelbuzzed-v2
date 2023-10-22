@@ -78,6 +78,18 @@ const MoviePage = ({ movie, lists }) => {
           <SectionWrapper header='Rules'>
             <Rules movie={movie} />
           </SectionWrapper>
+
+          {movie.ContentImages &&
+            movie.ContentImages.map((img) => (
+              <Box key={`image-${img.id}`}>
+                <Image
+                  src={img.url}
+                  alt='Movie image'
+                  width={img.width}
+                  height={img.height}
+                />
+              </Box>
+            ))}
         </Flex>
         <Flex mt={16} justifySelf='flex-end'>
           <ShareBtns
