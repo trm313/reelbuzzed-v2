@@ -35,12 +35,14 @@ const Rules = ({ movie }) => {
         ))}
       </Flex>
 
-      <Flex direction='column' w='full'>
-        <div
-          dangerouslySetInnerHTML={{ __html: ruleContents.extraContent }}
-          className='markdown'
-        />
-      </Flex>
+      {extraContent && (
+        <Flex direction='column' w='full'>
+          <div
+            dangerouslySetInnerHTML={{ __html: ruleContents.extraContent }}
+            className='markdown'
+          />
+        </Flex>
+      )}
     </>
   );
 };
