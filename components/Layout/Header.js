@@ -6,12 +6,13 @@ import HomeButton from "../HomeButton";
 
 import beeLogo from "../../public/bee_logo_whiteOutline.png";
 import textLogo from "../../public/text_logo_stacked.png";
+import logo_v2 from "../../public/reelbuzzed_logo.png";
 
 const Header = () => {
   const router = useRouter();
 
   return (
-    <Flex px={[0, 8]} direction='column' mb={4} bg='dark.800'>
+    <Flex px={[0, 8]} direction='column' mb={4}>
       <Flex
         alignItems='center'
         w='100%'
@@ -32,9 +33,9 @@ const Header = () => {
             <Flex alignItems='center'>
               <Box flexShrink={0} mr={4}>
                 <Image
-                  src={beeLogo}
-                  height={"40px"}
-                  width={"40px"}
+                  src={logo_v2}
+                  height={"80px"}
+                  width={"80px"}
                   alt='Reel Buzzed Logo'
                 />
               </Box>

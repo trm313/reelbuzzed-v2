@@ -19,9 +19,9 @@ const theme = extendTheme({
       300: "",
       400: "#41463d",
       500: "",
-      600: "#292c26",
+      600: "#26282C",
       700: "",
-      800: "#141613",
+      800: "#122022",
       900: "",
       default: "#292c26",
     },
@@ -40,6 +40,23 @@ const theme = extendTheme({
       600: "#987284",
       800: "#422040",
     },
+    // bee: {
+    //   50: "#ffebee", // very light bee color
+    //   100: "#ffd7b3", // lighter bee color
+    //   200: "#ffb97a", // light bee color
+    //   300: "#ff9b40", // bee color
+    //   400: "#ff7d06", // dark bee color
+    //   500: "#e46800", // darker bee color
+    //   600: "#b25000", // very dark bee color
+    //   700: "#7f3800", // darkest bee color
+    // },
+    // background: {
+    //   900: "#26282C", // primary dark background
+    //   800: "#1C1E21", // secondary dark shade
+    // },
+    // white: {
+    //   50: "#f7f7f7", // off white (for text)
+    // },
   },
 });
 

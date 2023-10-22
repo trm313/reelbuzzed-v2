@@ -9,21 +9,22 @@ import SectionWrapper from "./SectionWrapper";
 import Disclaimer from "../Disclaimer";
 import ShareBtns from "../ShareBtns";
 import ListNavs from "../ListNavs/ListNavs";
+import Rules from "./Rules";
 
 const MoviePage = ({ movie, lists }) => {
   let poster = movie.Images[0].thumbnails.large;
-  console.log(poster);
+
   return (
     <Flex
       direction='column'
       alignItems='center'
       w='full'
-      p={4}
+      p={0}
       mb={8}
       mx='auto'
     >
       <Flex direction='column' maxW='lg'>
-        <Flex label='Row Header' w='100%'>
+        <Flex label='Row Header' w='100%' bg='dark.600' p={4} rounded='xl'>
           <Box flexShrink={0} mr={3} maxW={[100, 100]}>
             <Image
               src={poster.url}
@@ -45,7 +46,7 @@ const MoviePage = ({ movie, lists }) => {
             <Ratings ratings={movie.Details.Ratings} />
           </Flex>
         </Flex>
-        <Divider mt={4} bg='yellow.400' />
+        {/* <Divider mt={4} bg='yellow.400' /> */}
         <Flex label='Content Body' direction='column'>
           <SectionWrapper header='Summary'>
             <Text>{movie.Details.Plot}</Text>
@@ -75,19 +76,7 @@ const MoviePage = ({ movie, lists }) => {
           </SectionWrapper>
           {/* <Disclaimer /> */}
           <SectionWrapper header='Rules'>
-            <Text fontSize='lg'>Drink whenever...</Text>
-            <ReactMarkdown className='markdown'>{movie.Rules}</ReactMarkdown>
-            {movie.ContentImages &&
-              movie.ContentImages.map((img) => (
-                <Box key={`image-${img.id}`}>
-                  <Image
-                    src={img.url}
-                    alt='Movie image'
-                    width={img.width}
-                    height={img.height}
-                  />
-                </Box>
-              ))}
+            <Rules movie={movie} />
           </SectionWrapper>
         </Flex>
         <Flex mt={16} justifySelf='flex-end'>
