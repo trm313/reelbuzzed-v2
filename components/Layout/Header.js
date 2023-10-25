@@ -4,9 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import HomeButton from "../HomeButton";
 
-import beeLogo from "../../public/bee_logo_whiteOutline.png";
-import textLogo from "../../public/text_logo_stacked.png";
-import logo_v2 from "../../public/reelbuzzed_logo.png";
+import beeLogo from "../../public/img/logos/bee_icon.png";
+import textLogo from "../../public/img/logos/text_logo_stacked.png";
 
 const Header = () => {
   const router = useRouter();
@@ -33,7 +32,7 @@ const Header = () => {
             <Flex alignItems='center'>
               <Box flexShrink={0} mr={4}>
                 <Image
-                  src={logo_v2}
+                  src={beeLogo}
                   height={"80px"}
                   width={"80px"}
                   alt='Reel Buzzed Logo'

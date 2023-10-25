@@ -1,8 +1,8 @@
 import { Flex, Text } from "@chakra-ui/react";
 import Image from "next/image";
 
-import imgRtFresh from "../../public/logos/RottenTomatoes_Fresh.png";
-import imgRtSplat from "../../public/logos/RottenTomatoes_Splat.png";
+import imgRtFresh from "../../public/img/icons/RottenTomatoes_Fresh.png";
+import imgRtSplat from "../../public/img/icons/RottenTomatoes_Splat.png";
 
 import { styles } from "./Rating";
 
