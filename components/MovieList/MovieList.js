@@ -33,7 +33,7 @@ const MovieList = ({ movies, lists }) => {
 
   return (
     <Flex direction={"column"}>
-      <ListNavs lists={lists} onlyFeatured={true} />
+      {/* <ListNavs lists={lists} onlyFeatured={true} /> */}
 
       <Heading
         size='sm'

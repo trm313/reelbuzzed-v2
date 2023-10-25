@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Flex, Text, Box, Icon } from "@chakra-ui/react";
+import { Flex, Text, Box, Icon, Avatar, AvatarGroup } from "@chakra-ui/react";
 
 import { BsCameraReels, BsTree, BsTreeFill } from "react-icons/bs";
 import {
@@ -27,24 +27,25 @@ const ListNav = ({ list }) => {
   }
 
   let iconSizes = [6, 8];
-
   return (
     <Link href={`/lists/${list.Slug}`}>
       <Flex
         bg='dark.600'
         flexGrow={1}
         alignItems='center'
-        justifyContent={["flex-start", "center"]}
+        // justifyContent={"center"}
+        justifyContent={"space-between"}
         py={6}
         px={6}
         m={1}
         rounded='lg'
-        w={[200, 300]}
+        // w={[200, 300]}
         cursor='pointer'
-        _hover={{ bg: "dark.400" }}
+        _hover={{ bg: "dark.600" }}
       >
         <Icon as={icon} h={iconSizes} w={iconSizes} mr={4} color='yellow.400' />
         <Text fontSize={["md", "xl"]}>{list.Name} Games</Text>
+        <Flex></Flex>
       </Flex>
     </Link>
   );

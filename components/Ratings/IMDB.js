@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Text } from "@chakra-ui/react";
-import imgIMDBLogo from "../../public/logos/imdb_square.png";
+import imgIMDBLogo from "../../public/img/icons/imdb_square.png";
 import { styles } from "./Rating";
 
 const IMDB = ({ rating }) => {

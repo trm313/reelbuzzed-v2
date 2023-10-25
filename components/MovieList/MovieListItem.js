@@ -7,6 +7,10 @@ import Ratings from "../Ratings/Ratings";
 
 const MovieListItem = ({ movie }) => {
   let poster = movie.Images[0].thumbnails.large;
+
+  if (!movie || !movie.Details) {
+    console.log("Bads movie data", movie.Movie, movie);
+  }
   return (
     <Link href={`/movies/${movie.Slug}`}>
       <Flex
@@ -30,12 +34,12 @@ const MovieListItem = ({ movie }) => {
             {movie.Movie} ({movie.Year})
           </Text>
           <Text fontSize='xs' color='gray.400'>
-            {movie.Details.Genre}
+            {movie.Details?.Genre}
           </Text>
           <Text fontSize='xs' mb={2} color='gray.400'>
-            {movie.Details.Actors}
+            {movie.Details?.Actors}
           </Text>
-          <Ratings ratings={movie.Details.Ratings} />
+          <Ratings ratings={movie.Details?.Ratings} />
         </Flex>
       </Flex>
     </Link>
