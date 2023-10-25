@@ -5,7 +5,7 @@ import { Flex, Text, Heading } from "@chakra-ui/react";
 import CollectionItem from "./CollectionItem";
 
 const CollectionList = ({ collections, onlyFeatured = false }) => {
-  console.log(collections);
+  // console.log(collections);
   let visibleLists = collections;
   if (onlyFeatured) {
     visibleLists = collections.filter((c) => c.IsFeatured);
@@ -15,16 +15,26 @@ const CollectionList = ({ collections, onlyFeatured = false }) => {
     <Flex direction='column'>
       <Heading
         size='sm'
-        // color='yellow.600'
         textTransform={"uppercase"}
         mt={4}
         mb={2}
+        textAlign={"center"}
       >
         Featured Lists
       </Heading>
-      {visibleLists.map((collection) => (
-        <CollectionItem key={`list-${collection.id}`} collection={collection} />
-      ))}
+      <Flex
+        direction={["column", "row"]}
+        flexWrap={"wrap"}
+        justifyContent={"center"}
+        w='full'
+      >
+        {visibleLists.map((collection) => (
+          <CollectionItem
+            key={`list-${collection.id}`}
+            collection={collection}
+          />
+        ))}
+      </Flex>
     </Flex>
   );
 };

@@ -17,13 +17,17 @@ const CollectionItem = ({ collection }) => {
   return (
     <Link href={`/lists/${collection.Slug}`}>
       <Flex
+        w={["full", "full", "sm"]}
         alignItems='center'
         justifyContent='space-between'
         p={4}
         bg='dark.600'
         color='light.600'
         rounded='xl'
-        _notLast={{ mb: 2 }}
+        mx={[0, 1]}
+        mb={2}
+
+        // _notLast={{ mb: 2 }}
       >
         <Flex direction='column' p={1}>
           <Heading size={"md"}>{collection.Name}</Heading>
