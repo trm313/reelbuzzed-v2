@@ -32,7 +32,8 @@ const MoviePostersStack = ({ movies }) => {
       max={2}
       spacing='-1.5rem'
       borderColor={"dark.600"}
-      // bg='dark.600' // How to change background color
+      // bg='dark.600' // How to change background color?
+      color='dark.600'
     >
       {renderAvatars()}
     </AvatarGroup>
