@@ -9,7 +9,7 @@ import ShareBtns from "../ShareBtns";
 import ListNavs from "../ListNavs/ListNavs";
 
 const ListiclePage = ({ list, lists }) => {
-  // console.log(list);
+  console.log(list);
   return (
     <Flex
       direction='column'
@@ -24,7 +24,7 @@ const ListiclePage = ({ list, lists }) => {
       <ReactMarkdown className='markdown'>{list.RichText}</ReactMarkdown>
 
       <Flex direction='column' my={8}>
-        {list.PopulatedMovies.map((m) => (
+        {list.Movies.map((m) => (
           <Movie key={`listicle-movie_${m.id}`} movie={m} />
         ))}
       </Flex>
