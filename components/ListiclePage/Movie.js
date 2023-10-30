@@ -17,8 +17,6 @@ import Ratings from "../Ratings/Ratings";
 import SectionWrapper from "../MoviePage/SectionWrapper";
 
 const Movie = ({ movie }) => {
-  let poster = movie.Images[0].thumbnails.large;
-
   return (
     <Flex
       direction='column'
@@ -41,10 +39,11 @@ const Movie = ({ movie }) => {
           h={148}
         >
           <Image
-            src={poster.url}
+            // src={poster.url}
+            src={`/posters/${movie.id}.png`}
             alt={`Movie Poster: ${movie.Movie}`}
-            width={poster.width}
-            height={poster.height}
+            width={"100px"}
+            height={"150px"}
           />
         </Box>
 

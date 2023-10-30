@@ -9,31 +9,22 @@ import Layout from "../components/Layout/Layout";
 import MovieList from "../components/MovieList/MovieList";
 import CollectionList from "../components/Listicles/CollectionList";
 
-// Functions
-import { fetchMovieList } from "../lib/movies";
-import { getListLinks, populateLists } from "../lib/listicles";
-import { updateDatabase } from "../lib/build";
+import { getMovies, getLists, populateLists } from "../lib/data";
 
-// Static Prop Generation
 export async function getStaticProps() {
-  await updateDatabase(); // Update Airtable records on build
-
-  const movies = await fetchMovieList();
-
-  const lists_raw = await getListLinks();
-  const lists = populateLists(lists_raw, movies);
+  const movies = getMovies();
+  const lists = getLists();
+  const listsPopulated = populateLists(lists, movies);
 
   return {
     props: {
       movies,
-      lists,
+      lists: listsPopulated,
     },
   };
 }
 
 export default function Home({ movies, lists }) {
-  // console.log(movies[0]);
-  // console.log({ lists, movies });
   return (
     <Layout>
       <Head>

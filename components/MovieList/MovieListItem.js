@@ -6,10 +6,8 @@ import { Flex, Text, Box } from "@chakra-ui/react";
 import Ratings from "../Ratings/Ratings";
 
 const MovieListItem = ({ movie }) => {
-  let poster = movie.Images[0].thumbnails.large;
-
   if (!movie || !movie.Details) {
-    console.log("Bads movie data", movie.Movie, movie);
+    console.log("Bad movie data", movie.Movie, movie);
   }
   return (
     <Link href={`/movies/${movie.Slug}`}>
@@ -23,7 +21,7 @@ const MovieListItem = ({ movie }) => {
       >
         <Box flexShrink={0} rounded='lg' overflow='hidden' h={148}>
           <Image
-            src={poster.url}
+            src={`/posters/${movie.id}.png`}
             alt={`Movie Poster: ${movie.Movie}`}
             width={100} // img dimension: 300px width, 444px height
             height={148}
