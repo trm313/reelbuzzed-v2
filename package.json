@@ -5,6 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "prebuild": "node ./scripts/processNewMovieGames.js && node ./scripts/writeLocalDataFiles.js && node ./scripts/writeLocalImages.js",
+    "script:writeLocalDataFiles": "node ./scripts/writeLocalDataFiles.js",
+    "script:processNewMovieGames": "node ./scripts/processNewMovieGames.js",
+    "script:writeLocalImages": "node ./scripts/writeLocalImages.js",
     "start": "next start",
     "lint": "next lint"
   },
@@ -14,7 +18,10 @@
     "@emotion/styled": "^11",
     "airtable": "^0.11.4",
     "axios": "^0.27.2",
+    "dotenv": "^16.3.1",
     "framer-motion": "^6",
+    "fs": "^0.0.1-security",
+    "image-downloader": "^4.3.0",
     "next": "12.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",

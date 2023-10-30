@@ -1,11 +1,19 @@
 import Head from "next/head";
 import { Flex, Text } from "@chakra-ui/react";
 
-import { getMoviePaths, getMovieRecord } from "../../lib/movies";
-import { getListLinks } from "../../lib/listicles";
+// import { getMoviePaths, getMovieRecord } from "../../lib/movies";
+// import { getListLinks } from "../../lib/listicles";
 
 import Layout from "../../components/Layout/Layout";
 import MoviePage from "../../components/MoviePage/MoviePage";
+
+import {
+  getMovies,
+  getLists,
+  populateLists,
+  getMoviePaths,
+  getMovie,
+} from "../../lib/data";
 
 export async function getStaticPaths() {
   const paths = await getMoviePaths();
@@ -16,14 +24,27 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const movie = await getMovieRecord(params.slug[2]);
-  const lists = await getListLinks();
+  const movie = await getMovie(params.slug[2]);
+  const movies = getMovies();
+  // const movie = movies.find((movie) => movie.id === params.slug[2]);
+  const lists = getLists();
+  const listsPopulated = populateLists(lists, movies);
+
   return {
     props: {
       movie,
-      lists,
+      lists: listsPopulated,
     },
   };
+
+  // const movie = await getMovieRecord(params.slug[2]);
+  // const lists = await getListLinks();
+  // return {
+  //   props: {
+  //     movie,
+  //     lists,
+  //   },
+  // };
 }
 
 export default function Movie({ movie, lists }) {

@@ -27,9 +27,12 @@ const MoviePage = ({ movie, lists }) => {
         <Flex label='Row Header' w='100%' bg='dark.600' p={4} rounded='xl'>
           <Box flexShrink={0} mr={3} maxW={[100, 100]}>
             <Image
-              src={poster.url}
+              // src={poster.url}
+              src={`/posters/${movie.id}.png`}
               alt={`Movie Poster: ${movie.Movie}`}
               // layout='fill'
+              // width='200px'
+              // height='300px'
               width={poster.width}
               height={poster.height}
             />

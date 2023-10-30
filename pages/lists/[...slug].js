@@ -1,13 +1,12 @@
 import Head from "next/head";
-import { Flex, Text } from "@chakra-ui/react";
-
-import { getListPaths, getListRecord, getListLinks } from "../../lib/listicles";
 
 import Layout from "../../components/Layout/Layout";
 import ListiclePage from "../../components/ListiclePage/ListiclePage";
 
+import { getLists, getList, populateLists, getListPaths } from "../../lib/data";
+
 export async function getStaticPaths() {
-  const paths = await getListPaths();
+  const paths = getListPaths();
 
   return {
     paths,
@@ -16,12 +15,13 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const lists = await getListLinks();
-  const list = await getListRecord(params.slug[0].toLowerCase());
+  const list = getList(params.slug[0].toLowerCase());
+  const lists = getLists();
+  const listsPopulated = populateLists(lists, movies);
   return {
     props: {
       list,
-      lists,
+      lists: listsPopulated,
     },
   };
 }
