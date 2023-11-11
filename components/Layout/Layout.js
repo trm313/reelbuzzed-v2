@@ -1,4 +1,4 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Text, Container } from "@chakra-ui/react";
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -13,10 +13,7 @@ const Layout = ({ children }) => (
     color='light.600'
   >
     <Header />
-    <Flex direction='column' flexGrow={1}>
-      {children}
-    </Flex>
-
+    <Container maxW='100em'>{children}</Container>
     <Footer />
   </Flex>
 );

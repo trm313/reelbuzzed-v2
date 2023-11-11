@@ -1,11 +1,10 @@
 import Head from "next/head";
 import { Flex, Text } from "@chakra-ui/react";
 
-// import { getMoviePaths, getMovieRecord } from "../../lib/movies";
-// import { getListLinks } from "../../lib/listicles";
-
 import Layout from "../../components/Layout/Layout";
 import MoviePage from "../../components/MoviePage/MoviePage";
+import CollectionList from "../../components/Listicles/CollectionList";
+import ShareBtns from "../../components/ShareBtns";
 
 import {
   getMovies,
@@ -26,7 +25,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const movie = await getMovie(params.slug[2]);
   const movies = getMovies();
-  // const movie = movies.find((movie) => movie.id === params.slug[2]);
   const lists = getLists();
   const listsPopulated = populateLists(lists, movies);
 
@@ -36,15 +34,6 @@ export async function getStaticProps({ params }) {
       lists: listsPopulated,
     },
   };
-
-  // const movie = await getMovieRecord(params.slug[2]);
-  // const lists = await getListLinks();
-  // return {
-  //   props: {
-  //     movie,
-  //     lists,
-  //   },
-  // };
 }
 
 export default function Movie({ movie, lists }) {
@@ -54,7 +43,15 @@ export default function Movie({ movie, lists }) {
       <Head>
         <title>{`${movie.Movie} (${movie.Year}) Drinking Game`}</title>
       </Head>
+
       <MoviePage movie={movie} lists={lists} />
+      <Flex my={16} justifyContent='center'>
+        <ShareBtns
+          shareText={`${movie.Movie} Drinking Game`}
+          shareUrl={`https://reelbuzzed.com/movies/${movie.Slug}`}
+        />
+      </Flex>
+      <CollectionList collections={lists} />
     </Layout>
   );
 }

@@ -5,11 +5,8 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 
 import Movie from "./Movie";
-import ShareBtns from "../ShareBtns";
-import ListNavs from "../ListNavs/ListNavs";
 
 const ListiclePage = ({ list, lists }) => {
-  console.log(list);
   return (
     <Flex
       direction='column'
@@ -27,17 +24,6 @@ const ListiclePage = ({ list, lists }) => {
         {list.Movies.map((m) => (
           <Movie key={`listicle-movie_${m.id}`} movie={m} />
         ))}
-      </Flex>
-
-      <Flex mb={8}>
-        <ShareBtns
-          shareText={`${list.Name} Drinking Games`}
-          shareUrl={`https://reelbuzzed.com/lists/${list.Slug}`}
-        />
-      </Flex>
-
-      <Flex direction='column' mt={8}>
-        <ListNavs lists={lists} />
       </Flex>
     </Flex>
   );
