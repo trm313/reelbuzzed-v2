@@ -5,7 +5,6 @@ import * as gtag from "../../lib/gtag";
 
 import SearchBar from "../SearchBar";
 import MovieListItem from "./MovieListItem";
-import ListNavs from "../ListNavs/ListNavs";
 
 const MovieList = ({ movies, lists }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -85,9 +84,6 @@ const MovieList = ({ movies, lists }) => {
             <Text>{`We log failed searches so we'll try to add it soon`}</Text>
           </Flex>
         )}
-      </Flex>
-      <Flex direction='column' mt={8}>
-        <ListNavs lists={lists} />
       </Flex>
     </Flex>
   );
