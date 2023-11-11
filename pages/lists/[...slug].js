@@ -1,7 +1,10 @@
 import Head from "next/head";
+import { Flex, Text } from "@chakra-ui/react";
 
 import Layout from "../../components/Layout/Layout";
 import ListiclePage from "../../components/ListiclePage/ListiclePage";
+import CollectionList from "../../components/Listicles/CollectionList";
+import ShareBtns from "../../components/ShareBtns";
 
 import {
   getLists,
@@ -21,7 +24,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  // const list = getList(params.slug[0].toLowerCase());
   const lists = getLists();
   const movies = getMovies();
   const listsPopulated = populateLists(lists, movies);
@@ -37,13 +39,19 @@ export async function getStaticProps({ params }) {
 }
 
 export default function List({ list, lists }) {
-  // console.log(list);
   return (
     <Layout>
       <Head>
         <title>{`${list.Name} Drinking Games`}</title>
       </Head>
       <ListiclePage list={list} lists={lists} />
+      <Flex my={16} justifyContent='center'>
+        <ShareBtns
+          shareText={`${list.Name} Drinking Games`}
+          shareUrl={`https://reelbuzzed.com/lists/${list.Slug}`}
+        />
+      </Flex>
+      <CollectionList collections={lists} />
     </Layout>
   );
 }

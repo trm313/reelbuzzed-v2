@@ -20,16 +20,20 @@ const SearchBar = ({ value, onChangeValue }) => {
     onChangeValue(v);
   };
 
+  // Sizing is buggy on input, using `py` to get a bigger size, but have to apply individually on input elements, doesn't work right when just on InputGroup
+  const py = 8;
+
   return (
     <InputGroup
-      w={["100%", "md", "xl"]}
+      w='full'
+      maxW='xl'
       mx='auto'
       mb={4}
       display='flex'
       alignItems='center'
       size='lg'
     >
-      <InputLeftElement fontSize='1.4em'>
+      <InputLeftElement fontSize='1.4em' py={py}>
         <Icon as={IoSearchOutline} color='yellow.200' />
       </InputLeftElement>
       <Input
@@ -37,15 +41,18 @@ const SearchBar = ({ value, onChangeValue }) => {
         onChange={(e) => change(e.target.value)}
         placeholder='Search movie titles'
         variant='filled'
+        py={py}
         rounded='xl'
         // border='1px'
         borderColor={"yellow.200"}
         bg='dark.600'
         color='light.600'
         _placeholder={{ opacity: 0.6, color: "light.600" }}
+        _hover={{ bg: "dark.600" }}
+        _focus={{ borderColor: "yellow.600" }}
       />
       {value !== "" && (
-        <InputRightElement>
+        <InputRightElement py={py}>
           <IconButton
             icon={<Icon as={IoClose} />}
             size='xs'

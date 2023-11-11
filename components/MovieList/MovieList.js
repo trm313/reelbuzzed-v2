@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Flex, Heading, Text, Icon } from "@chakra-ui/react";
 import { FaTired } from "react-icons/fa";
 import * as gtag from "../../lib/gtag";
@@ -19,25 +19,43 @@ const MovieList = ({ movies, lists }) => {
     });
   };
 
+  function debounce(func, timeout = 300) {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(this, args);
+      }, timeout);
+    };
+  }
+
+  const search = useCallback(
+    debounce((searchTerm) => {
+      let filteredMovies = movies.filter((m) => {
+        return m.Movie.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
+      });
+
+      if (filteredMovies.length == 0) {
+        logFailedSearch(searchTerm);
+      }
+
+      setVisibleMovies(filteredMovies);
+    }, 500),
+    []
+  );
+
   useEffect(() => {
-    let filteredMovies = movies.filter((m) => {
-      return m.Movie.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
-    });
-
-    if (filteredMovies.length == 0) {
-      logFailedSearch(searchTerm);
+    if (searchTerm) {
+      search(searchTerm);
+    } else {
+      setVisibleMovies(movies);
     }
-
-    setVisibleMovies(filteredMovies);
-  }, [searchTerm, movies]);
+  }, [searchTerm, movies, search]);
 
   return (
     <Flex direction={"column"}>
-      {/* <ListNavs lists={lists} onlyFeatured={true} /> */}
-
       <Heading
         size='sm'
-        // color='yellow.600'
         textTransform={"uppercase"}
         mt={4}
         mb={2}

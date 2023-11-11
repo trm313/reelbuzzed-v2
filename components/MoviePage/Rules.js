@@ -28,10 +28,10 @@ const Rules = ({ movie }) => {
   return (
     <>
       <Flex direction='column'>
-        <Text>Drink Whenever...</Text>
+        <Text fontSize='xl'>Take a drink whenever...</Text>
         {ruleContents.rules.map((m, index) => (
           <Flex key={`rule-${index}`} bg='dark.600' p={4} mb={2} rounded='xl'>
-            <Text>{m}</Text>
+            <Text fontSize='lg'>{m}</Text>
           </Flex>
         ))}
       </Flex>
